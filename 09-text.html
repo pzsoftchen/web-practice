@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文本属性</title>
+    <style>
+        .text-color {
+            color: crimson;
+        }
+        
+        .text-align-center {
+            text-align: center;
+            background-color: blanchedalmond;
+        }
+        
+        .text-align-left {
+            text-align: left;
+            background-color: blue;
+        }
+        
+        .text-align-right {
+            text-align: right;
+            background-color: cornflowerblue;
+        }
+        
+        .text-dec {
+            text-decoration: underline;
+        }
+        
+        .text-dec1 {
+            text-decoration: line-through;
+        }
+        
+        .text-dec2 {
+            text-decoration: overline;
+        }
+        
+        .text-dec-no {
+            text-decoration: none;
+        }
+        
+        .text-indent {
+            text-indent: 2em;
+        }
+        
+        .line-height {
+            line-height: 35px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h3>1. 颜文本色 color</h3>
+    <div class="text-color">人生如逆旅，我亦是行人</div>
+
+    <h3>2. 文本对齐 text-align</h3>
+    <div class="text-align-center"> text-align 文本居中对齐 </div>
+    <div class="text-align-left"> text-align 文本左对齐 </div>
+    <div class="text-align-right"> text-align 文本右对齐 </div>
+
+    <h3>3. 装饰文本 text-decoration</h3>
+    <div class="text-dec2">添加上划线 overline</div>
+    <div class="text-dec1">添加中划线 line-through</div>
+    <div class="text-dec">添加下划线 underline</div>
+    <a class="text-dec-no">去掉a标签的下划线 none </a>
+
+    <h3>4. 文本首行缩进 text-indent</h3>
+    <p class="text-indent">
+        Web Components 规范已经完成并通过，但未被所有浏览器原生实现。目前 Safari 10.1+、Chrome 54+ 和 Firefox 63+ 原生支持 Web Components。相比之下，Vue 组件不需要任何 polyfill，并且在所有支持的浏览器 (IE9 及更高版本) 之下表现一致。必要时，Vue 组件也可以包装于原生自定义元素之内
+    </p>
+
+    <h3>5. 文本行高（上间距+文本高度+下间距） line-height</h3>
+    <p class="line-height">
+        Web Components 规范已经完成并通过，但未被所有浏览器原生实现。目前 Safari 10.1+、Chrome 54+ 和 Firefox 63+ 原生支持 Web Components。相比之下，Vue 组件不需要任何 polyfill，并且在所有支持的浏览器 (IE9 及更高版本) 之下表现一致。必要时，Vue 组件也可以包装于原生自定义元素之内
+    </p>
+
+</body>
+
+</html>

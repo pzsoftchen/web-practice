@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>background</title>
+    <style>
+        .bg-c {
+            background-color: paleturquoise;
+            height: 300px;
+            width: 500px;
+            text-align: center;
+        }
+        
+        .bg-img {
+            background-image: url(imges/logo.png);
+        }
+        
+        .bg-rn {
+            background-repeat: no-repeat;
+        }
+        
+        .bg-rx {
+            background-repeat: repeat-x;
+        }
+        
+        .bg-ry {
+            background-repeat: repeat-y;
+        }
+        
+        .bg-p1 {
+            /* left right top bottom */
+            background-position: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h3>1. background-color 背景颜色</h3>
+    <div class="bg-c"></div>
+
+    <h3>2. background-image 背景图片，默认平铺</h3>
+    <div class="bg-c bg-img"></div>
+
+    <h3>3. background-repeat 不平铺</h3>
+    <div class="bg-c bg-img bg-rn"></div>
+
+    <h3>4. background-repeat 沿x轴平铺</h3>
+    <div class="bg-c bg-img bg-rx"></div>
+
+    <h3>5. background-repeat 沿x轴平铺</h3>
+    <div class="bg-c bg-img bg-ry"></div>
+
+
+    <h3>6. background-position 背景图片定位</h3>
+    <div class="bg-c bg-img bg-rn bg-p1"></div>
+
+</body>
+
+</html>

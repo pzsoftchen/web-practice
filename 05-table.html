@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table</title>
+</head>
+
+<body>
+    <h4>1. table表格, tr行，td列</h4>
+    <table>
+        <tr>
+            <td>序号</td>
+            <td>姓名</td>
+            <td>年龄</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>张三</td>
+            <td>18</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>李四</td>
+            <td>25</td>
+        </tr>
+    </table>
+
+    <h4>2. table表格，使用th指定表头</h4>
+    <table>
+        <tr>
+            <th>序号</th>
+            <th>姓名</th>
+            <th>年龄</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>张三</td>
+            <td>18</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>李四</td>
+            <td>25</td>
+        </tr>
+    </table>
+
+    <h4>3. table表格 添加表头 caption； 添加边框:border=1，调整内容和单元格之间的空白距离：cellpadding=15，调整单元格之间的间距：cellspacing=0； 设置表格宽度width=500，宽度：height=100</h4>
+    <table border="1" cellpadding="15" cellspacing="0" width="500" height="100">
+        <caption>花名册</caption>
+        <thead>
+            <tr>
+                <th>序号</th>
+                <th>姓名</th>
+                <th>年龄</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>张三</td>
+                <td>18</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>李四</td>
+                <td>25</td>
+            </tr>
+        </tbody>
+    </table>
+    <h4>4. table表格，合并行：rowspan, 属性定义在合并行首行，即合最上行</h4>
+    <table border="1" width="200" height="50">
+        <tr>
+            <td>姓名</td>
+            <td>张三</td>
+        </tr>
+        <tr>
+            <td rowspan="2">电话</td>
+            <td>110</td>
+        </tr>
+        <tr>
+            <td>119</td>
+        </tr>
+    </table>
+
+    <h4>4. table表格，合并列：colspan， 属性定义在合并列的首列，即最左列</h4>
+    <table border="1" width="200" height="50">
+        <tr>
+            <td>姓名</td>
+            <td colspan="2">电话</td>
+        </tr>
+        <tr>
+            <td>张三</td>
+            <td>110</td>
+            <td>119</td>
+        </tr>
+    </table>
+</body>
+
+</html>
