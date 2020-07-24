@@ -46,7 +46,11 @@
         }
         
         .line-height {
-            line-height: 35px;
+            font-size: 20px;
+            /* 行高设置，如果带有px单位则按照实际单位设置行高，
+            如果不设置单位在表示为当前字体大小的多少倍，
+            比如当前字体大小20px，行高1.5则表示行高30px */
+            line-height: 1.5;
         }
     </style>
 
@@ -73,10 +77,7 @@
     </p>
 
     <h3>5. 文本行高（上间距+文本高度+下间距） line-height</h3>
-    <p class="line-height">
-        Web Components 规范已经完成并通过，但未被所有浏览器原生实现。目前 Safari 10.1+、Chrome 54+ 和 Firefox 63+ 原生支持 Web Components。相比之下，Vue 组件不需要任何 polyfill，并且在所有支持的浏览器 (IE9 及更高版本) 之下表现一致。必要时，Vue 组件也可以包装于原生自定义元素之内
-    </p>
-
+    <p class="line-height"> Web Components 规范已经完成并通过，但未被所有浏览器原生实现。</p>
 </body>
 
 </html>
