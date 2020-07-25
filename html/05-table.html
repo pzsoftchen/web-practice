@@ -5,6 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>table</title>
+
+    <style>
+        .tb-person {
+            color: orangered;
+            font-weight: 700;
+            font-size: 14px;
+            text-align: center;
+            border-collapse: collapse;
+            width: 200px;
+            height: 50px;
+        }
+        
+        .tb-person th {
+            border: 1px solid black;
+        }
+        
+        .tb-person td {
+            border: 1px solid black;
+        }
+    </style>
 </head>
 
 <body>
@@ -94,6 +114,25 @@
             <td>张三</td>
             <td>110</td>
             <td>119</td>
+        </tr>
+    </table>
+
+    <h4>5. table表格，利用css控制表格边框和颜色</h4>
+    <table class="tb-person">
+        <tr>
+            <th>序号</th>
+            <th>姓名</th>
+            <th>年龄</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>张三</td>
+            <td>18</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>李四</td>
+            <td>25</td>
         </tr>
     </table>
 </body>
