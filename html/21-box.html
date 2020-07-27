@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>盒子样式</title>
+    <style>
+        div {
+            width: 500px;
+            height: 300px;
+            background-color: green;
+            margin: 50px 0;
+        }
+        
+        .border1 {
+            border: 1px transparent
+        }
+        
+        .border2 {
+            border: 5px dotted;
+        }
+        
+        .border3 {
+            border: 1px transparent;
+            /* border-radius: 20px; */
+            border-radius: 20px 30px 50px 60px;
+        }
+        
+        .border4 {
+            width: 200px;
+            height: 100px;
+            border-radius: 50px;
+        }
+        
+        .border5 {
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+        }
+        
+        .border6 {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            box-shadow: 10px 10px 10px rgb(0, 0, 0, .3);
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h3>1. 带透明边框 </h3>
+    <div class="border1"></div>
+    <h3>2. 点线边框 </h3>
+    <div class="border2"></div>
+    <h3>3. 圆角边框 border-radius </h3>
+    <div class="border3"></div>
+    <h3>4. 圆角边框 </h3>
+    <div class="border4"></div>
+    <h3>5. 圆形 </h3>
+    <div class="border5"></div>
+    <h3>6. 盒子阴影 box-shadow</h3>
+    <div class="border6"></div>
+
+</body>
+
+</html>
