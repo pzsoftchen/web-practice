@@ -99,6 +99,10 @@ a {
     color: #ffffff;
 }
 
+.login button:hover {
+    cursor: pointer;
+}
+
 .search {
     width: 750px;
     height: 205px;
