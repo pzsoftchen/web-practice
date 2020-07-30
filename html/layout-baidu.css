@@ -11,6 +11,10 @@ a {
     text-decoration: none;
 }
 
+:focus {
+    outline: none;
+}
+
 .clearfix:after {
     content: "";
     display: block;
@@ -147,8 +151,6 @@ a {
 }
 
 .search-bd button:hover {
-    border-radius: 0 10px 10px 0;
-    border-color: #4662d9;
     background-color: #4662d9;
     cursor: pointer;
 }
