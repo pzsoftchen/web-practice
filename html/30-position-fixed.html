@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position-fixed</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        div {
+            width: 200px;
+            height: 500px;
+            background-color: skyblue;
+        }
+        
+        .fixed-left {
+            position: fixed;
+            top: 200px;
+            left: 20px;
+        }
+        
+        .fixed-right {
+            position: fixed;
+            top: 200px;
+            right: 20px;
+        }
+        
+        .w {
+            width: 800px;
+            height: 1000px;
+            margin: 0 auto;
+            background-color: skyblue;
+        }
+        
+        .nav {
+            position: fixed;
+            /* top: 50%; */
+            top: 720px;
+            left: 50%;
+            /* margin-left: -25px; */
+            /* margin-top: -40px; */
+            margin-left: 405px;
+            width: 50px;
+            height: 80px;
+            background-color: orange;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="fixed-left">广告招商</div>
+    <div class="w"></div>
+    <div class="nav"></div>
+    <div class="fixed-right">广告招商</div>
+
+</body>
+
+</html>
