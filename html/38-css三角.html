@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS三角形</title>
+    <style>
+        .box {
+            width: 600px;
+            margin: 100px auto;
+            border: 1px solid red;
+        }
+        
+        .box1 {
+            display: inline-block;
+            width: 0;
+            height: 0;
+            margin: 30px;
+            /* border: 10px solid green; */
+            border-top: 20px solid red;
+            border-right: 20px solid green;
+            border-bottom: 20px solid yellow;
+            border-left: 20px solid skyblue;
+        }
+        
+        .box2 {
+            display: inline-block;
+            width: 0;
+            height: 0;
+            margin: 30px;
+            border: 20px solid transparent;
+            border-left-color: skyblue;
+        }
+        
+        .box3 {
+            display: inline-block;
+            width: 0;
+            height: 0;
+            margin: 30px;
+            border: 20px solid transparent;
+            border-top-color: red;
+        }
+        
+        .box4 {
+            display: inline-block;
+            width: 0;
+            height: 0;
+            margin: 30px;
+            border: 20px solid transparent;
+            border-right-color: green;
+        }
+        
+        .box5 {
+            display: inline-block;
+            width: 0;
+            height: 0;
+            margin: 30px;
+            border: 20px solid transparent;
+            border-bottom-color: yellow;
+        }
+        
+        .box5 {
+            display: inline-block;
+            width: 0;
+            height: 0;
+            margin: 30px;
+            border: 20px solid transparent;
+            border-bottom-color: yellow;
+        }
+        
+        .box6 {
+            display: inline-block;
+            position: relative;
+            margin: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: pink;
+        }
+        
+        .box6 span {
+            position: absolute;
+            width: 0;
+            height: 0;
+            top: -10px;
+            left: 50%;
+            margin-left: -5px;
+            border: 5px solid transparent;
+            border-bottom-color: pink;
+        }
+        
+        .box7 {
+            display: inline-block;
+            position: relative;
+            margin: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: pink;
+        }
+        
+        .box7 span {
+            position: absolute;
+            width: 0;
+            height: 0;
+            top: 50%;
+            right: -10px;
+            margin-top: -5px;
+            border: 5px solid transparent;
+            border-left-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="box">
+
+        <div class="box1"></div>
+
+        <div class="box2"></div>
+        <div class="box3"></div>
+        <div class="box4"></div>
+        <div class="box5"></div>
+
+
+        <div class="box6">
+            <span></span>
+        </div>
+
+        <div class="box7">
+            <span></span>
+        </div>
+
+    </div>
+</body>
+
+</html>
