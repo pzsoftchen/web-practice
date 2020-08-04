@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Margin 负值的布局</title>
+
+    <style>
+        ul li {
+            position: relative;
+            float: left;
+            list-style: none;
+            width: 200px;
+            height: 300px;
+            margin-left: -1px;
+            border: 1px solid red;
+        }
+        
+        ul li:hover {
+            /* 如果没有定位则采用设置相对定位使盒子能够提升层级 */
+            /* position: relative; */
+            /* 如果有定位则采用z-index设置盒子层级 */
+            z-index: 1;
+            border: 2px solid blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+
+
+</body>
+
+</html>
