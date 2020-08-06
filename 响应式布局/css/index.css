@@ -18,8 +18,20 @@ ul {
     background-color: #429ad9;
 }
 
+.logo span {
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 18px;
+}
+
 .logo img {
-    width: 100%;
+    /* width: 100%; */
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
 }
 
 .nav {
@@ -27,8 +39,17 @@ ul {
     border-bottom: 1px solid #cccccc;
 }
 
-.nav li {
-    list-style: none;
+@media screen and (max-width:991px) {
+    .nav li {
+        float: left;
+        width: 20%;
+    }
+}
+
+@media screen and (max-width:767px) {
+    .nav li a {
+        font-size: 12px;
+    }
 }
 
 .nav li a {
@@ -118,6 +139,7 @@ ul {
 }
 
 .hot {
+    display: block;
     margin-top: 20px;
     border: 1px solid #eeeeee;
     padding: 0 20px 10px 20px;
@@ -125,11 +147,11 @@ ul {
 
 .hot a span {
     border-radius: 0;
+    margin-bottom: 10px;
 }
 
 .hot a p {
     font-size: 12px;
-    color: #666666;
 }
 
 .hot a:hover {
