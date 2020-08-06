@@ -1,0 +1,141 @@
+@media screen and (min-width:1280px) {
+    .container {
+        width: 1280px;
+    }
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.cus-header {
+    padding-left: 0;
+}
+
+.logo {
+    background-color: #429ad9;
+}
+
+.logo img {
+    width: 100%;
+}
+
+.nav {
+    background-color: #eeeeee;
+    border-bottom: 1px solid #cccccc;
+}
+
+.nav li {
+    list-style: none;
+}
+
+.nav li a {
+    display: inline-block;
+    height: 50px;
+    width: 100%;
+    line-height: 50px;
+    padding-left: 30px;
+    font-size: 16px;
+    color: #666666;
+}
+
+.nav li a:hover {
+    background-color: #ffffff;
+    text-decoration: none;
+    font-weight: 700px;
+    color: #000000;
+}
+
+.nav li a::before {
+    vertical-align: middle;
+    padding-right: 5px;
+}
+
+.news li {
+    float: left;
+    width: 25%;
+    height: 128px;
+    padding-right: 5px;
+    margin-bottom: 10px;
+}
+
+.news li a {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.news li:nth-child(1) {
+    width: 50%;
+    height: 266px;
+}
+
+.news li:nth-child(1) p {
+    line-height: 41px;
+    font-size: 20px;
+    padding: 0 10px;
+}
+
+.news li a img {
+    width: 100%;
+    height: 100%;
+}
+
+.news li a p {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 41px;
+    margin-bottom: 0;
+    padding: 5px 10px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    font-size: 12px;
+}
+
+.publish {
+    border-top: 2px solid #eeeeee;
+}
+
+.publish .row {
+    border-bottom: 2px solid #eeeeee;
+    padding: 10px 0;
+}
+
+.publish img {
+    width: 100%;
+    height: 100%;
+    margin-top: 8px;
+}
+
+.banner img {
+    width: 100%;
+    height: 100%;
+}
+
+.hot {
+    margin-top: 20px;
+    border: 1px solid #eeeeee;
+    padding: 0 20px 10px 20px;
+}
+
+.hot a span {
+    border-radius: 0;
+}
+
+.hot a p {
+    font-size: 12px;
+    color: #666666;
+}
+
+.hot a:hover {
+    text-decoration: none;
+}
+
+.hot a p:hover {
+    color: #337ab7;
+}
