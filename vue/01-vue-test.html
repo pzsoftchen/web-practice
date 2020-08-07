@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div {
+            border-bottom: 1px solid red;
+            padding-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>01: vue start </h3>
+    <div id="app">
+        {{ message }}
+    </div>
+
+    <h3>02: v-bind</h3>
+    <div id="app-bind">
+        <span v-bind:title="message">鼠标悬停几秒钟查看此处动态绑定的提示信息！</span>
+        <br>
+        <span> {{ message }} </span>
+    </div>
+
+    <h3>03: v-if</h3>
+
+    <div id="app-if">
+        <p v-if="isShow">我们的征途是星辰大海</p>
+    </div>
+
+    <h3>04: v-on</h3>
+    <div id="app-on">
+        <button v-on:click="freshDate">刷新时间</button>
+        <button @click="freshDate">@刷新绑定事件</button>
+        <span>当前时间： {{ message }} </span>
+        <br>
+        <h4>计数器</h4>
+        <button @click="sub"> - </button> <span>{{ number }}</span> <button @click="add"> + </button>
+    </div>
+
+    <h3>05: v-show</h3>
+    <div id="app-show">
+
+        <button @click="show">{{ btn }}</button>
+        <span v-show="isShow">{{ message }}</span>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: 'Hello Vue!'
+            }
+        });
+
+        var appBind = new Vue({
+            el: '#app-bind',
+            data: {
+                message: '页面加载于 ' + new Date().toLocaleString()
+            }
+        });
+
+        var appIf = new Vue({
+            el: '#app-if',
+            data: {
+                isShow: true
+            }
+        });
+
+        var appOn = new Vue({
+            el: "#app-on",
+            data: {
+                message: new Date().toLocaleString(),
+                number: 1
+            },
+
+            methods: {
+                freshDate: function() {
+                    this.message = '' + new Date().toLocaleString();
+                },
+
+                sub: function() {
+
+                    if (this.number > 0) {
+                        this.number--;
+                    } else {
+                        alert("不能小于0");
+                    }
+                },
+
+                add: function() {
+                    if (this.number < 10) {
+                        this.number++;
+                    } else {
+                        alert("不能大于10！");
+                    }
+                }
+            }
+        })
+
+        var appShow = new Vue({
+            el: '#app-show',
+            data: {
+                btn: '隐藏',
+                message: '我们的征途是星辰大海',
+                isShow: true
+            },
+            methods: {
+                show: function() {
+                    this.isShow = !this.isShow;
+                    if (this.isShow) {
+                        this.btn = "隐藏";
+                    } else {
+                        this.btn = "显示";
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
