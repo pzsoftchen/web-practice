@@ -8,7 +8,7 @@
 
     <style>
         div {
-            border-bottom: 1px solid red;
+            border-bottom: 2px solid red;
             padding-bottom: 10px;
         }
     </style>
@@ -20,20 +20,22 @@
         {{ message }}
     </div>
 
-    <h3>02: v-bind</h3>
+    <h3>02: v-bind 设置元素的属性（v-bind:class 等同于 :class） </h3>
     <div id="app-bind">
         <span v-bind:title="message">鼠标悬停几秒钟查看此处动态绑定的提示信息！</span>
         <br>
         <span> {{ message }} </span>
+        <br>
+        <img v-bind:src="imgSrc" :title="imgName" width="240px" height="300px">
     </div>
 
-    <h3>03: v-if</h3>
+    <h3>03: v-if 判断</h3>
 
     <div id="app-if">
         <p v-if="isShow">我们的征途是星辰大海</p>
     </div>
 
-    <h3>04: v-on</h3>
+    <h3>04: v-on 绑定事件(v-on:click 等同于 @click)</h3>
     <div id="app-on">
         <button v-on:click="freshDate">刷新时间</button>
         <button @click="freshDate">@刷新绑定事件</button>
@@ -43,12 +45,18 @@
         <button @click="sub"> - </button> <span>{{ number }}</span> <button @click="add"> + </button>
     </div>
 
-    <h3>05: v-show</h3>
+    <h3>05: v-show 控制元素显示隐藏</h3>
     <div id="app-show">
-
         <button @click="show">{{ btn }}</button>
         <span v-show="isShow">{{ message }}</span>
+    </div>
 
+    <h3>06：利用v-show v-on v-bind实现图片轮播</h3>
+    <div id="app-img">
+        <button @click="prev" v-show="index!=0">《 </button>
+        <img v-bind:src="images[index]" alt="">
+        <!-- <img src="images/news-2.jpg" alt=""> -->
+        <button @click="next" v-show="index<images.length-1"> 》</button>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -63,6 +71,8 @@
         var appBind = new Vue({
             el: '#app-bind',
             data: {
+                imgSrc: 'images/lyf.jpeg',
+                imgName: '刘亦菲',
                 message: '页面加载于 ' + new Date().toLocaleString()
             }
         });
@@ -119,6 +129,33 @@
                         this.btn = "隐藏";
                     } else {
                         this.btn = "显示";
+                    }
+                }
+            }
+        })
+
+        var appImg = new Vue({
+            el: "#app-img",
+            data: {
+                preShow: true,
+                nextShow: true,
+                index: 0,
+                images: ['images/news-2.jpg',
+                    'images/news-3.jpg',
+                    'images/news-4.jpg',
+                    'images/news-5.jpg'
+                ]
+            },
+
+            methods: {
+                prev: function() {
+                    if (this.index > 0) {
+                        this.index--;
+                    }
+                },
+                next: function() {
+                    if (this.index < this.images.length - 1) {
+                        this.index++;
                     }
                 }
             }
