@@ -53,10 +53,10 @@
 
     <h3>06：利用v-show v-on v-bind实现图片轮播</h3>
     <div id="app-img">
-        <button @click="prev" v-show="index!=0">《 </button>
+        <button @click="prev" v-show="index!=0">上一张 </button>
         <img v-bind:src="images[index]" alt="">
         <!-- <img src="images/news-2.jpg" alt=""> -->
-        <button @click="next" v-show="index<images.length-1"> 》</button>
+        <button @click="next" v-show="index < images.length-1"> 下一张 </button>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
