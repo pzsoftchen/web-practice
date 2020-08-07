@@ -59,6 +59,30 @@
         <button @click="next" v-show="index < images.length-1"> 下一张 </button>
     </div>
 
+    <h3>07: v-for指令， 根据数据生成列表结构ul或select</h3>
+    <div id="app-for">
+        <input type="button" value="添加" @click="add">
+        <input type="button" value="移除" @click="remove">
+        <ul>
+            <li v-for="item in arr">{{ item }}</li>
+        </ul>
+
+        <ol>
+            <li v-for="item in arr">{{ item }}</li>
+        </ol>
+
+        <select name="rea" id="">
+            <option v-for="item in arr" v-bind:value="item">{{ item }}</option>
+        </select>
+    </div>
+
+    <h3>08: v-model 双向绑定</h3>
+
+    <div id="app-model">
+        <input type="text" v-model="message" @keyup.enter="refresh">
+        <h2>{{ message }}</h2>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script>
         var app = new Vue({
@@ -157,6 +181,34 @@
                     if (this.index < this.images.length - 1) {
                         this.index++;
                     }
+                }
+            }
+        })
+
+        var appFor = new Vue({
+            el: '#app-for',
+            data: {
+                arr: ['北京', '上海', '广州', '深圳']
+            },
+            methods: {
+                add: function() {
+                    this.arr.push("郑州");
+                },
+
+                remove: function() {
+                    this.arr.shift();
+                }
+            }
+        })
+
+        var appModel = new Vue({
+            el: '#app-model',
+            data: {
+                message: "lanlan happy!"
+            },
+            methods: {
+                refresh: function() {
+                    console.log(this.message);
                 }
             }
         })
