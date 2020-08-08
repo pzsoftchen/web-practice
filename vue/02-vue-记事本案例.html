@@ -51,6 +51,17 @@
             border-bottom: 1px solid red;
         }
         
+        #app-text ol li button {
+            border: 0;
+            display: none;
+            background-color: yellow;
+            font-size: 8px;
+        }
+        
+        #app-text ol li:hover button {
+            display: inline-block;
+        }
+        
         .footer {
             position: absolute;
             width: 360px;
@@ -77,13 +88,13 @@
 
     <div class="text">
         <div id="app-text">
-            <input type="text" value="记事本" @keyup.enter="add">
+            <input type="text" placeholder="TODO" v-model:value="inputData" @keyup.enter="add">
             <ol>
-                <li v-for="item in content "> {{ item.id }} . {{ item.text }}</li>
+                <li v-for="(item, index) in content "> {{ index + 1 }} . {{ item }} <button @click="del(index)">remove</button></li>
             </ol>
             <div class="footer">
-                <span>统计</span>
-                <a href="#">清空</a>
+                <span>共计: {{content.length}} 条</span>
+                <a href="#" @click="clear">清空</a>
             </div>
         </div>
     </div>
@@ -93,32 +104,21 @@
         var appText = new Vue({
             el: '#app-text',
             data: {
-                content: [{
-                    id: 1,
-                    text: '写代码'
-                }, {
-                    id: 2,
-                    text: '吃饭饭'
-                }, {
-                    id: 3,
-                    text: '睡觉觉'
-                }, {
-                    id: 4,
-                    text: '玩游戏'
-                }]
+                inputData: '',
+                content: ['写代码', '吃饭饭', '睡觉觉', '玩游戏']
             },
-            method: {
+            methods: {
                 add: function() {
-                    this.content.push({
-                        id: 5,
-                        text: '我爱祖国天安门'
-                    })
+                    this.content.push(this.inputData);
+                    this.inputData = '';
+                    console.log("add: " + this.inputData);
                 },
-                modify: function() {
-
+                del: function(id) {
+                    this.content.splice(id, 1);
+                    console.log("id:" + id);
                 },
-                del: function() {
-
+                clear: function() {
+                    this.content = [];
                 }
             }
         })
