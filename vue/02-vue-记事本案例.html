@@ -90,7 +90,7 @@
         <div id="app-text">
             <input type="text" placeholder="TODO" v-model:value="inputData" @keyup.enter="add">
             <ol>
-                <li v-for="(item, index) in content "> {{ index + 1 }} . {{ item }} <button @click="del(index)">remove</button></li>
+                <li v-for="(item, index) in content "> {{ index + 1 }} . {{ item }} <button @click="del(index)">del</button></li>
             </ol>
             <div class="footer">
                 <span>共计: {{content.length}} 条</span>
