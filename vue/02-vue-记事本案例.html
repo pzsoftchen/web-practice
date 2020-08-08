@@ -5,13 +5,123 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>记事本案例</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        li {
+            list-style: none;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        .text {
+            position: relative;
+            margin: 100px auto;
+            width: 400px;
+            height: 500px;
+            overflow: hidden;
+            background-color: #c6c6c6;
+        }
+        
+        #app-text {
+            margin: 20px;
+            height: 450px;
+            background-color: #ffffff;
+        }
+        
+        #app-text input {
+            margin-bottom: 20px;
+            outline: none;
+            width: 360px;
+            height: 40px;
+            line-height: 40px;
+            border: 0;
+            text-indent: 1em;
+            border-bottom: 2px solid red;
+            font-size: 18px;
+        }
+        
+        #app-text ol li {
+            padding: 10px;
+            border-bottom: 1px solid red;
+        }
+        
+        .footer {
+            position: absolute;
+            width: 360px;
+            height: 20px;
+            bottom: 30px;
+            font-size: 12px;
+            color: #c6c6c6;
+        }
+        
+        .footer span {
+            float: left;
+            padding-left: 10px;
+        }
+        
+        .footer a {
+            float: right;
+            padding-right: 10px;
+            color: #c6c6c6;
+        }
+    </style>
 </head>
 
 <body>
 
+    <div class="text">
+        <div id="app-text">
+            <input type="text" value="记事本" @keyup.enter="add">
+            <ol>
+                <li v-for="item in content "> {{ item.id }} . {{ item.text }}</li>
+            </ol>
+            <div class="footer">
+                <span>统计</span>
+                <a href="#">清空</a>
+            </div>
+        </div>
+    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js "></script>
     <script>
+        var appText = new Vue({
+            el: '#app-text',
+            data: {
+                content: [{
+                    id: 1,
+                    text: '写代码'
+                }, {
+                    id: 2,
+                    text: '吃饭饭'
+                }, {
+                    id: 3,
+                    text: '睡觉觉'
+                }, {
+                    id: 4,
+                    text: '玩游戏'
+                }]
+            },
+            method: {
+                add: function() {
+                    this.content.push({
+                        id: 5,
+                        text: '我爱祖国天安门'
+                    })
+                },
+                modify: function() {
+
+                },
+                del: function() {
+
+                }
+            }
+        })
     </script>
 </body>
 
