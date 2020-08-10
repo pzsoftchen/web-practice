@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axios</title>
+    <style>
+        #app-axios {
+            margin: 100px auto;
+            background-color: skyblue;
+            text-align: center;
+        }
+        
+        #app-axios button {
+            margin-top: 5px;
+            width: 100px;
+            height: 30px;
+            border: 0;
+        }
+        
+        #app-axios p {
+            padding: 10px;
+            text-align: left;
+            text-indent: 2rem;
+            color: #ffffff;
+            font-size: 12px;
+            line-height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="app-axios">
+        <button @click="getJoke">笑一笑</button>
+        <p>{{ joke }}</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js "></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        var appAxios = new Vue({
+            el: "#app-axios",
+            data: {
+                joke: '笑话'
+            },
+
+            methods: {
+                getJoke: function() {
+                    var that = this;
+                    axios.get("https://autumnfish.cn/api/joke")
+                        .then(function(response) {
+                            that.joke = response.data;
+                            console.log(response.data);
+                        }, function(err) {
+                            console.log(err);
+                        })
+                }
+            }
+        })
+    </script>
+
+</body>
+
+</html>
