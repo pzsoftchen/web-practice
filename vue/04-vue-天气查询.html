@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>天知道</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        li {
+            list-style: none;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+         :focus {
+            outline: none;
+        }
+        
+        .clearfix:after {
+            content: "";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+        
+        .clearfix {
+            /* IE6、7 专有 */
+            *zoom: 1;
+        }
+        
+        #app-weather {
+            width: 500px;
+            height: 300px;
+            margin: 100px auto;
+            overflow: hidden;
+        }
+        
+        .pro-name {
+            margin-top: 50px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: 700;
+            color: black;
+        }
+        
+        .pro-search {
+            margin-top: 30px;
+            width: 500px;
+            text-align: center;
+        }
+        
+        .pro-search input {
+            float: left;
+            width: 400px;
+            height: 38px;
+            border: 2px solid skyblue;
+            border-top-left-radius: 8px;
+            border-bottom-left-radius: 8px;
+            border-right: 0;
+            text-indent: 2em;
+        }
+        
+        .pro-search button {
+            float: left;
+            width: 98px;
+            height: 42px;
+            line-height: 42px;
+            border: 2px solid skyblue;
+            border-top-right-radius: 8px;
+            border-bottom-right-radius: 8px;
+            border-left: 0;
+            background-color: green;
+            color: #ffff;
+            font-size: 14px;
+        }
+        
+        .pro-search button:hover {
+            cursor: pointer;
+        }
+        
+        .search-key {
+            margin-top: 8px;
+        }
+        
+        .search-key a {
+            font-size: 12px;
+            padding: 0 5px;
+            color: #c6c6c6;
+        }
+        
+        .weather-result {
+            margin-top: 25px;
+        }
+        /* .wather-result ul {
+            float: left;
+        } */
+        
+        .weather-result ul li {
+            float: left;
+            width: 79px;
+            padding: 0 10px;
+            text-align: left;
+            /* border: 1px solid red; */
+            border-left: 2px solid #cccccc;
+            margin-left: -2px;
+            color: orange;
+        }
+        
+        .weather-result ul li .w-temp {
+            font-size: 12px;
+            margin: 5px 0;
+        }
+        
+        .weather-result ul li .w-date {
+            font-size: 10px;
+            color: #c6c6c6;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="app-weather">
+        <div class="pro-name">
+            <span>天知道</span>
+        </div>
+        <div class="pro-search clearfix">
+            <input type="text" class="city-search" v-model:value="city" placeholder="请输入要查询的城市名词" @keyup.enter="searchWeather">
+            <button @click="searchWeather">搜索</button>
+        </div>
+        <div class="search-key">
+            <a href="#" @click="changeCity('深圳')">深圳</a>
+            <a href="#" @click="changeCity('上海')">上海</a>
+            <a href="#" @click="changeCity('广州')">广州</a>
+            <a href="#" @click="changeCity('北京')">北京</a>
+        </div>
+        <div class="weather-result">
+            <ul>
+                <li v-for="item in forecast">
+                    <h3>{{ item.type }}</h3>
+                    <p class="w-temp">{{ item.low }} {{ item.high }}</p>
+                    <p class="w-date">{{ item.date }}</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js "></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/wather.js"></script>
+</body>
+
+</html>
