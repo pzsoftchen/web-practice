@@ -1,0 +1,40 @@
+.navbar-brand img {
+    width: 172px;
+    margin: 10px 0;
+}
+
+.navbar-brand {
+    padding: 0;
+    padding-left: 15px;
+}
+
+.btn-store {
+    position: relative;
+    width: 145px;
+    height: 38px;
+    margin: 10px 0;
+    line-height: 38px !important;
+    padding: 0 !important;
+    border: 0;
+    background-color: #ff4488;
+    color: #fff !important;
+}
+
+.btn-store-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 145px;
+    height: 38px;
+    background: rgba(255, 255, 255, .5);
+    opacity: 0;
+}
+
+.btn-store:hover {
+    background-color: #ff4488 !important;
+    color: #fff !important;
+}
+
+.btn-store:hover .btn.btn-store-mask {
+    opacity: 1;
+}
