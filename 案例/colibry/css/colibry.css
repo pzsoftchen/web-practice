@@ -10,11 +10,22 @@
     overflow: hidden;
 }
 
-header {
+
+/* .header-p {
+    position: relative;
     height: 50px;
     padding: 0 20px;
-    box-shadow: 0px 0px 12px rgb(0, 0, 0, .1);
+} */
+
+header {
+    /* position: fixed; */
+    top: 0;
+    left: 0;
+    width: 1880px;
+    height: 50px;
+    padding: 0 20px;
     background-color: #ffffff;
+    box-shadow: 0px 0px 12px rgb(0, 0, 0, .1);
 }
 
 a {
@@ -229,7 +240,6 @@ footer {
 .pay-style {
     float: left;
     width: 624px;
-    height: 248px;
     padding: 36px 26px;
     text-align: left;
 }
@@ -257,7 +267,6 @@ footer {
 .links {
     float: left;
     width: 624px;
-    height: 248px;
     padding: 36px 26px;
 }
 
@@ -281,7 +290,6 @@ footer {
 
 .contacts {
     float: left;
-    height: 248px;
     padding: 36px 26px;
 }
 
