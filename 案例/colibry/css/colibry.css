@@ -116,7 +116,7 @@ li {
 }
 
 .banner .banner-left .banner-desc img {
-    width: 100%;
+    width: 448px;
     height: 84px;
     margin-bottom: 40px;
 }
@@ -218,4 +218,88 @@ li {
     padding: 20px 10px;
     font-size: 18px;
     text-align: center;
+}
+
+footer {
+    margin-top: 50px;
+    padding-left: 15px;
+    border-top: 1px solid #c6c6c6;
+}
+
+.pay-style {
+    float: left;
+    width: 624px;
+    height: 248px;
+    padding: 36px 26px;
+    text-align: left;
+}
+
+.pay-style h3 {
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.pay-style p {
+    height: 42px;
+    font-size: 14px;
+    color: #aaaaaa;
+}
+
+.pay-style img {
+    width: 80%;
+    vertical-align: middle;
+}
+
+.pay-style p a {
+    color: #ff4488;
+}
+
+.links {
+    float: left;
+    width: 624px;
+    height: 248px;
+    padding: 36px 26px;
+}
+
+.links dt {
+    height: 24px;
+    margin-bottom: 10px;
+}
+
+.links dl dd {
+    font-size: 14px;
+    height: 27px;
+}
+
+.links dl dd a {
+    color: #ff4488;
+}
+
+.links dl dd a:hover {
+    text-decoration: underline;
+}
+
+.contacts {
+    float: left;
+    height: 248px;
+    padding: 36px 26px;
+}
+
+.contacts h3 {
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.contacts p {
+    line-height: 27px;
+    font-size: 14px;
+    color: #aaaaaa;
+}
+
+.contacts p a {
+    color: #ff4488;
+}
+
+.contacts p a:hover {
+    text-decoration: underline;
 }
