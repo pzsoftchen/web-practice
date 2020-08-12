@@ -193,3 +193,25 @@ header.w {
     padding-bottom: 0;
     font-size: 40px;
 }
+
+.epilation-video {
+    margin-top: 10px;
+    height: 510px;
+    background-image: url(../images/maxresdefault.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.epilation-row p {
+    margin-bottom: 20px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.epilation-row .p1 {
+    height: 78px;
+    margin-top: 10px;
+    padding-top: 50px;
+    font-size: 30px;
+    font-weight: 400;
+}
