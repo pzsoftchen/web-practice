@@ -24,54 +24,35 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-default">
+
+    <nav class="navbar navbar-default navbar-fixed-top header">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-                <a class="navbar-brand" href="#">Brand</a>
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img src="images/col-logo-b.png" alt="">
+                </a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-                    <li><a href="#">Link</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">One more separated link</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <form class="navbar-form navbar-left">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search">
-                    </div>
-                    <button type="submit" class="btn btn-default">Submit</button>
-                </form>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">Link</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
-                        </ul>
+                    <li>
+                        <a href="#" class="btn btn-primary hidden-xs buy-link">BUY COLIBRY</a>
+                        <a href="#" class="visible-xs buy-link-xs">BUY COLIBRY</a>
+                    </li>
+                    <li><a href="#" class="lang-default lang-switch hidden-xs">ENG</a>
+                        <a href="#" class="visible-xs lang-default">ENG</a></li>
+                    <li class="hidden-xs lang-sp"><span><em>//</em></span></li>
+                    <li>
+                        <a href="#" class="hidden-xs">ITA</a>
+                        <a href="#" class="visible-xs">ITA</a>
                     </li>
                 </ul>
             </div>
@@ -79,6 +60,26 @@
         </div>
         <!-- /.container-fluid -->
     </nav>
+
+    <div class="container-fluid row-center  banner">
+        <div class="row">
+            <div class="col-lg-6 banner-left">
+                <h1>Epilation <br> has never been <br> more pleasant</h1>
+                <p>Smooth your skin with no pain, irritation, or batteries. <br> Use threading to remove body hair and get pleasant and long lasting epilation!</p>
+                <img src="images/Quote_ENG.png" alt="">
+                <div class="btn-discover"><a href="#">Discover Colibry</a></div>
+            </div>
+            <div class="col-lg-6 banner-right">
+                <img src="images/col-bg-hero@2x.jpeg" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid kick-row center">
+        <h1 class="w-content">Colibry has already made thousands of women happy around the world.</h1>
+        <p class="w-content"><a href="#">Check out how we raised more than 70,000€ on Kickstarter </a></p>
+    </div>
+
     <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
     <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
