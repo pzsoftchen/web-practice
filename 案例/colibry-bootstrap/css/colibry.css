@@ -56,29 +56,17 @@ li.hidden-xs.lang-sp span {
     margin-right: 20px!important;
 }
 
+@media screen and (min-width: 768px) {
+    .jumbotron {
+        padding-top: 48px;
+        padding-bottom: 48px;
+        padding-left: 48px;
+    }
+}
+
 .banner {
-    position: relative;
-    margin-top: 50px!important;
+    margin-top: 53px!important;
     background-color: #fdf4f5;
-}
-
-.banner-left {
-    position: absolute;
-    float: left;
-    top: 50px;
-    left: 80px;
-}
-
-.banner-left h1 {
-    font-size: 55px;
-}
-
-.banner-left p {
-    width: 814px;
-    height: 76px;
-    margin: 25px 0;
-    line-height: 35px;
-    font-size: 18px;
 }
 
 .banner-left img {
@@ -91,10 +79,11 @@ li.hidden-xs.lang-sp span {
     margin-top: 30px;
     width: 400px;
     height: 73px;
-    line-height: 73px;
+    line-height: 51px;
     text-align: center;
     background-color: #ff4488;
     border-radius: 8px;
+    color: #fff;
 }
 
 .btn-discover a {
@@ -103,13 +92,8 @@ li.hidden-xs.lang-sp span {
     color: #ffffff;
 }
 
-.banner-right {
-    float: right;
-    overflow: hidden;
-}
-
 .banner-right img {
-    width: 921px;
+    width: 100%;
 }
 
 .center {
