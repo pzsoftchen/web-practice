@@ -1,53 +1,65 @@
+.clearfix:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.clearfix {
+    /* IE6、7 专有 */
+    *zoom: 1;
+}
+
 body{
     margin: 0;
     padding: 0;
     background:linear-gradient(to right, #b7e7dd 5px, #f7f7f7 4px 340px, #fff 316px);
 }
 
-a{
-    text-decoration: none;
-    color: black;
-}
-
-li{
-    list-style: none;
-}
-
-h1{
-    font-size: 16px;
-    font-weight: normal;
-}
-
-.header{
-    margin-top: 20px;
+.el-header, .el-footer {
+    width: 100%;
+    height: 60px;
+    border: 1px solid red;
     text-align: center;
-}
+    line-height: 60px;
+  }
+  
+  .el-aside {
+    background-color: #D3DCE6;
+    height: 100%;
+    color: #333;
+    text-align: center;
+  }
+  
+  .el-main {
+    background-color: #E9EEF3;
+    color: #333;
+    text-align: center;
+  }
 
-.header-title{
-    float: left;
-    margin-left: 20px;
-}
+  .el-footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+  }
 
-.header-title img{
-    width: 50px;
-    height: 50px;
-    vertical-align: middle;
-}
+  .el-form-item{
+      margin-left: 180px;
+  }
 
-.header-title span{
-    padding-left: 10px;
-}
+  .el-form-item__label{
+    padding-right: 20px!important;
+  }
 
-.header-title strong{
-    color: #b7e7dd ;
-}
+  .el-radio{
+    margin-left: 10px;
+  }
 
-.header-link{
-    float: right;
-    margin-right: 50px;
-}
-
-.header-link li{
-    display: inline-block;
-    padding: 0 10px 0 10px;
-}
+  .el-input input{
+      margin-left: 10px;
+      width: 120px;
+      border: 0;
+      outline: none;
+      border-bottom: 3px solid blue;
+  }
