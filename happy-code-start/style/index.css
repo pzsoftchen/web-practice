@@ -14,7 +14,7 @@
 body{
     margin: 0;
     padding: 0;
-    background:linear-gradient(to right, #b7e7dd 5px, #f7f7f7 4px 340px, #fff 316px);
+    background:linear-gradient(to right, #b7e7dd 10px, #f7f7f7 4px 330px, #fff 316px);
 }
 
 
@@ -79,9 +79,13 @@ body{
 } 
 
 .footer-download{
-  margin-left: 320px;
+  margin-left: 330px;
   background-color: white;
   border-top: 1px solid #ccc;
+}
+
+.footer-download .el-button{
+  margin-right: 15px;
 }
 
 .el-aside {
@@ -98,9 +102,13 @@ body{
 }
 
 .el-footer{
-  position: fixed-sticky;
+  position: sticky;
   bottom: 0px;
   z-index: 100;
+}
+
+.desktop-only{
+  padding-left: 2px;
 }
 
 .el-form-item{
@@ -118,12 +126,13 @@ body{
 .el-input input{
   margin-left: 10px;
   padding: 0.35rem 0px 0.85rem 0px;
-  width: 400px;
+  width: 500px;
   border: 0;
   border-radius: 0em;
   outline: none;
   border-bottom: 3px solid #ebebeb;
-  line-height: 20px;
+  line-height: 30px;
+  height: 30px;
 }
 
 .el-input input:focus{
@@ -133,29 +142,22 @@ body{
 .title{
   display: block;
   margin-left: 10px;
-  margin-top: 5px;
+  margin-top: 15px;
   color: #706c69;
   font-size: 14px;
   font-weight: lighter;
   line-height: 17px;
 }
 
-.el-input__inner{
-  height: 16px;
-  line-height: 16px;
+.el-collapse{
+  margin-left: 10px;
+  width: 500px;
 }
 
-.el-collapse{
-  margin-left: 5px;
-  width: 405px;
-}
 
 .search-db-table{
   float: right;
   margin-top: 10px;
-  font-weight: normal;
-  background: #b7e7dd!important;
-  border: 0;
   font-size: 12px;
 }
 

@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Happy Code, Happy Coding, Happy Coding Initializr, Spring Boot, Spring Cloud, Spring Cloud Alibaba">
     <title>Happy Coding Initializr</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.min.css@8.0.1/normalize.min.css">
     <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
     <link rel="stylesheet" href="./style/index.css">
     <link rel="icon" href="./images/favicon.ico">
@@ -25,106 +24,87 @@
         </div>
       </el-header>
       <div style="margin: 10px;"></div>
-      <el-form label-width="160px" label-position="right">
-        <el-form-item label="项目构建方式">
-          <el-radio label="1">Maven Project</el-radio>
-          <el-radio label="2">Gradle Project</el-radio>
+      <el-form label-width="160px" :model="happyCodeForm" label-position="right">
+        <el-form-item label="项目构建方式" >
+          <el-radio-group v-model="happyCodeForm.build">
+            <el-radio label="maven">Maven Project</el-radio>
+            <el-radio label="gradle">Gradle Project</el-radio>
+          </el-radio-group>
         </el-form-item>
-        <el-form-item label="Happy Code版本">
-          <el-radio label="1">1.0.1.RELEASE</el-radio>
+        <el-form-item label="Happy Code版本" >
+          <el-radio-group v-model="happyCodeForm.happyCodeVersion">
+            <el-radio label="1.0.1.RELEASE">1.0.1.RELEASE</el-radio>
+          </el-radio-group>
         </el-form-item>
         <el-form-item label="项目基本信息">
-            <label class="title">Group</label><el-input placeholder="Group" value="com.example"></el-input>
-            <label class="title">Artifact</label><el-input placeholder="Artifact" value="demo"></el-input>
-            <label class="title">name</label><el-input placeholder="name" value="demo"></el-input>
-            <el-collapse v-model="activeNames" @change="handleChange">
+            <label class="title">Group</label><el-input v-model="happyCodeForm.projectMetadata.group" placeholder="Group"></el-input>
+            <label class="title">Artifact</label><el-input  v-model="happyCodeForm.projectMetadata.artifact" placeholder="Artifact"></el-input>
+            <label class="title">name</label><el-input v-model="happyCodeForm.projectMetadata.name" placeholder="name"></el-input>
+            <el-collapse v-model="activeNames">
               <el-collapse-item title="高级选项" name="1">
-                <label class="title">Description</label><el-input placeholder="Description" value="Demo project for Spring Boot"></el-input>
-                <label class="title">Package name</label><el-input placeholder="Package name" value="com.example.demo"></el-input>
-                <label class="title">author</label><el-input placeholder="Author" value="zhangsan"></el-input>
-                <label class="title">email</label><el-input placeholder="Email" value="zhangsan@aliyun.com"></el-input>
+                <label class="title">Description</label><el-input v-model="happyCodeForm.projectMetadata.description" placeholder="Description"></el-input>
+                <label class="title">Package name</label><el-input v-model="happyCodeForm.projectMetadata.proPackage" placeholder="Package name"></el-input>
+                <label class="title">author</label><el-input v-model="happyCodeForm.author.name" placeholder="Author"></el-input>
+                <label class="title">email</label><el-input  v-model="happyCodeForm.author.email" placeholder="Email"></el-input>
                 <label class="title">Java版本</label>
-                <el-radio label="15">15</el-radio>
-                <el-radio label="11">11</el-radio>
-                <el-radio label="1.8">8</el-radio>
+                <el-radio-group v-model="happyCodeForm.projectMetadata.javaVersion">
+                  <el-radio label="1.8">8</el-radio>
+                  <el-radio label="11">11</el-radio>
+                  <el-radio label="15">15</el-radio>
+                </el-radio-group>
               </el-collapse-item>
             </el-collapse>
         </el-form-item>
         <el-form-item label="数据库配置">
-          <el-collapse v-model="activeNames" @change="handleChange">
+          <el-collapse v-model="activeNames">
             <el-collapse-item title="数据库配置" name="1">
-              <label class="title">host</label><el-input></el-input>
-              <label class="title">port</label><el-input></el-input>
-              <label class="title">username</label><el-input></el-input>
-              <label class="title">password</label><el-input></el-input>
-              <label class="title">schema</label><el-input></el-input>
-              <el-button class="search-db-table" @click="drawer = true" type="info" plain>
+              <label class="title">host</label><el-input v-model="happyCodeForm.database.host"></el-input>
+              <label class="title">port</label><el-input v-model="happyCodeForm.database.port"></el-input>
+              <label class="title">username</label><el-input v-model="happyCodeForm.database.username"></el-input>
+              <label class="title">password</label><el-input v-model="happyCodeForm.database.password"></el-input>
+              <label class="title">schema</label><el-input v-model="happyCodeForm.database.schema"></el-input>
+              <label class="title">tablePrefix</label><el-input v-model="happyCodeForm.database.tablePrefix"></el-input>
+              <el-button icon="el-icon-thumb" class= "search-db-table" @click="table = true" type="info" plain>
                 选择表信息
               </el-button>
             </el-collapse-item>
           </el-collapse>
         </el-form-item>
-      </el-form>
-      <el-drawer
+        <el-drawer
         title="库表信息"
-        :visible.sync="drawer"
+        :visible.sync="table"
         :direction="direction"
-        :before-close="handleClose">
+        size=35%>
         <template>
           <el-table
-            :data="tableData"
+            ref="multipleTable"
+            :data="dbTableDatas"
             style="width: 100%">
-            <el-table-column type="expand">
-              <template slot-scope="props">
-                <el-form label-position="left" inline class="demo-table-expand">
-                  <el-form-item label="商品名称">
-                    <span>{{ props.row.name }}</span>
-                  </el-form-item>
-                  <el-form-item label="所属店铺">
-                    <span>{{ props.row.shop }}</span>
-                  </el-form-item>
-                  <el-form-item label="商品 ID">
-                    <span>{{ props.row.id }}</span>
-                  </el-form-item>
-                  <el-form-item label="店铺 ID">
-                    <span>{{ props.row.shopId }}</span>
-                  </el-form-item>
-                  <el-form-item label="商品分类">
-                    <span>{{ props.row.category }}</span>
-                  </el-form-item>
-                  <el-form-item label="店铺地址">
-                    <span>{{ props.row.address }}</span>
-                  </el-form-item>
-                  <el-form-item label="商品描述">
-                    <span>{{ props.row.desc }}</span>
-                  </el-form-item>
-                </el-form>
-              </template>
+            <el-table-column
+              type="selection"
+              width="55">
             </el-table-column>
             <el-table-column
-              label="商品 ID"
-              prop="id">
-            </el-table-column>
-            <el-table-column
-              label="商品名称"
-              prop="name">
+              label="表名"
+              prop="tableName">
             </el-table-column>
             <el-table-column
               label="描述"
-              prop="desc">
+              prop="tableDesc">
             </el-table-column>
           </el-table>
         </template>
       </el-drawer>
-    </el-container>
-    <el-footer>
+    </el-form>
+      <el-footer>
         <div class="footer-copyright">© 2020-2021 happycoding.cool<br>happycoding.cool is powered by<br><span><a href="http://www.happycoding.cool" target="_blank">happycoding.cool</a></span></div>
-        <div class="footer-download">download</div>
+        <div class="footer-download"><el-button @click="generateCode" type="primary"  plain>获取代码<span class="desktop-only">- ⌘ + ⏎</span></el-button><el-button type="info" plain>预览代码<span class="desktop-only">- Ctrl + Space</span></el-button></div>
     </el-footer>
+    </el-container>
   </div>
 </body>
   <!-- import Vue before Element -->
-  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="https://unpkg.com/element-ui/lib/index.js"></script>
   <script src="script/index.js"></script>
 </html>
