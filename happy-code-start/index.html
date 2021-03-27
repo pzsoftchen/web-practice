@@ -63,7 +63,9 @@
               <label class="title">username</label><el-input v-model="happyCodeForm.database.username"></el-input>
               <label class="title">password</label><el-input v-model="happyCodeForm.database.password"></el-input>
               <label class="title">schema</label><el-input v-model="happyCodeForm.database.schema"></el-input>
-              <label class="title">tablePrefix</label><el-input v-model="happyCodeForm.database.tablePrefix"></el-input>
+              <label class="title">tablePrefix <el-tooltip class="item" effect="light" content="多个前缀逗号分割" placement="right-start">
+                <i class="el-icon-question"></i>
+            </el-tooltip></label><el-input v-model="happyCodeForm.database.tablePrefix"></el-input>
               <el-button icon="el-icon-thumb" class= "search-db-table" @click="table = true" type="info" plain>
                 选择表信息
               </el-button>

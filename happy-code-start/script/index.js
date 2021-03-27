@@ -42,7 +42,7 @@ var app = new Vue({
               }
           }
     },
-    method:{
+    methods:{
      listTables: function(){
 
      },
