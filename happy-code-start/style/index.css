@@ -50,7 +50,7 @@ body{
 
 .header-index li{
   display: inline-block;
-  padding-right: 10px;
+  padding-right: 20px;
   text-decoration: none;
   list-style: none;
 }
@@ -78,6 +78,10 @@ body{
   background-color: #f7f7f7;
 } 
 
+.footer-copyright span a{
+  color: #b7e7dd;
+}
+
 .footer-download{
   margin-left: 330px;
   background-color: white;
@@ -102,8 +106,8 @@ body{
 }
 
 .el-footer{
-  position: sticky;
-  bottom: 0px;
+  position: fixed;
+  bottom: 5px;
   z-index: 100;
 }
 
@@ -154,7 +158,6 @@ body{
   width: 500px;
 }
 
-
 .search-db-table{
   float: right;
   margin-top: 10px;
@@ -168,4 +171,26 @@ body{
 
 .el-collapse-item__header{
   border-bottom: 3px solid #ebebeb;
+}
+
+.el-radio__input.is-checked+.el-radio__label{
+  color: #b7e7dd;
+}
+
+.el-radio__input.is-checked .el-radio__inner{
+  border-color: #b7e7dd;
+  background: #b7e7dd;
+}
+
+.db-settings{
+  padding-bottom: 80px;
+}
+
+.el-button--primary.is-plain:focus, .el-button--primary.is-plain:hover {
+  background: #b7e7dd;
+  border-color: #b7e7dd;
+}
+.el-button--primary.is-plain{
+  color: #b7e7dd;
+  border-color: #b7e7dd;
 }

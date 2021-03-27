@@ -14,7 +14,7 @@
   <div id="app">
     <el-container>
       <el-header>
-        <div class="header-log"><img src="./images/cover-logo.jpeg"> <span>happycoding.cool</span> </div>
+        <div class="header-log"><img src="./images/cover-logo.jpeg"> <span>happy coding</span> </div>
         <div class="header-index">
           <ul>
             <li><a href="#">文档</a></li>
@@ -40,7 +40,7 @@
             <label class="title">Group</label><el-input v-model="happyCodeForm.projectMetadata.group" placeholder="Group"></el-input>
             <label class="title">Artifact</label><el-input  v-model="happyCodeForm.projectMetadata.artifact" placeholder="Artifact"></el-input>
             <label class="title">name</label><el-input v-model="happyCodeForm.projectMetadata.name" placeholder="name"></el-input>
-            <el-collapse v-model="activeNames">
+            <el-collapse v-model="activeProject">
               <el-collapse-item title="高级选项" name="1">
                 <label class="title">Description</label><el-input v-model="happyCodeForm.projectMetadata.description" placeholder="Description"></el-input>
                 <label class="title">Package name</label><el-input v-model="happyCodeForm.projectMetadata.proPackage" placeholder="Package name"></el-input>
@@ -56,7 +56,7 @@
             </el-collapse>
         </el-form-item>
         <el-form-item label="数据库配置">
-          <el-collapse v-model="activeNames">
+          <el-collapse class="db-settings">
             <el-collapse-item title="数据库配置" name="1">
               <label class="title">host</label><el-input v-model="happyCodeForm.database.host"></el-input>
               <label class="title">port</label><el-input v-model="happyCodeForm.database.port"></el-input>
@@ -97,7 +97,7 @@
       </el-drawer>
     </el-form>
       <el-footer>
-        <div class="footer-copyright">© 2020-2021 happycoding.cool<br>happycoding.cool is powered by<br><span><a href="http://www.happycoding.cool" target="_blank">happycoding.cool</a></span></div>
+        <div class="footer-copyright">© 2020-2021 happycoding.cool<br>happycoding is powered by<br><span><a href="http://www.happycoding.cool" target="_blank">happycoding.cool</a></span></div>
         <div class="footer-download"><el-button @click="generateCode" type="primary"  plain>获取代码<span class="desktop-only">- ⌘ + ⏎</span></el-button><el-button type="info" plain>预览代码<span class="desktop-only">- Ctrl + Space</span></el-button></div>
     </el-footer>
     </el-container>
