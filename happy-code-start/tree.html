@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Happy Code, Happy Coding, Happy Coding Initializr, Spring Boot, Spring Cloud, Spring Cloud Alibaba">
+    <title>Happy Coding Initializr</title>
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <link rel="stylesheet" href="./fonts/iconfont.css">
+    <link rel="icon" href="./images/favicon.ico">
+</head>
+<body>
+  <div id="app">
+    <div class="tree"> 
+    <el-tree :data="data5" node-key="id" default-expand-all >
+        
+      <span v-if="data.label === '三级 1-1-1'" class="iconfont icon-wenjianjia4" slot-scope="{ node, data }">
+        {{ node.label }} 
+      </span>
+      <span v-else class="iconfont icon-wenjian" slot-scope="{ node, data }">
+        {{ node.label }} 
+      </span>
+    </el-tree>
+    </div>
+  </div>
+  <style scoped>
+ 
+  </style>
+</body>
+  <!-- import Vue before Element -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+  <script src="script/tree.js"></script>
+  
+</html>
